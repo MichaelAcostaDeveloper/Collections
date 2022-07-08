@@ -60,6 +60,4 @@ public  class CollectionsExamples {
         newList.clear();
         System.debug('Is empty the list: '+newList.isEmpty());
     }
-
-
 }
