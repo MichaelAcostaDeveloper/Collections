@@ -15,5 +15,12 @@ public with sharing class ExamplesDML {
         return obj.Id;
     }
 
-    
+    public static Account updateObjetExample(String idAccount, String newName){
+        Account objAccount = new Account();
+        objAccount.Id = idAccount;
+        objAccount.Name = newName;
+        update objAccount;
+
+        return objAccount;
+    }
 }
