@@ -44,7 +44,7 @@ public  class CollectionsListExamples {
         newList.clear();
         System.debug('List empty: '+newList);
     }
-    //access, size, indexOf
+    //get, size, indexOf
     public static void examplesAnotherMethodsPart2(){
         List<String> newList = new List<String>(listTesting());
         System.debug('Value of element position 3: '+newList.get(3));
