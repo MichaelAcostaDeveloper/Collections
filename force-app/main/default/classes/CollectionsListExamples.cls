@@ -1,4 +1,4 @@
-public  class CollectionsExamples {
+public  class CollectionsListExamples {
     //null list
     public static void examplesList(){
         List<String> nullList;
@@ -60,6 +60,4 @@ public  class CollectionsExamples {
         newList.clear();
         System.debug('Is empty the list: '+newList.isEmpty());
     }
-
-
 }
