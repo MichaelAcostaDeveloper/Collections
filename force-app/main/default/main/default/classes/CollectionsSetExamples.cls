@@ -32,12 +32,8 @@ public class CollectionsSetExamples {
     //size, contains, isEmpty
     public static void exampleMethodsPart2(){
         Set<String> newExample = setTesting().clone();
-        System.debug('Size: '+newExample.size()); 
+        System.debug('Size: '+newExample.size());
         System.debug('Is empty: '+newExample.isEmpty());
         System.debug('Contains: '+newExample.contains('Ecuador'));
-        
     }
-
-
-
 }
