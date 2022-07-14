@@ -1,6 +1,6 @@
 public with sharing class CollectionsSOQLlist {
     static List<Account> accounts = new List<Account>();
-    
+
     public static void examplesTestSOQL(){
         accounts = [SELECT Id, Name, Type FROM Account WHERE Type!='' ORDER BY Name ASC LIMIT 5];
         System.debug('List of accounts: '+accounts);
