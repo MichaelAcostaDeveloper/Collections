@@ -3,18 +3,21 @@ public with sharing class CollectionsSOQLmap {
         SELECT Id,Name, Type
         FROM Account
         WHERE Type != ''
-        ORDER BY Name ASC
+        ORDER BY Name ASC LIMIT 5
     ]);
+    static List<Account> listAccounts = new List<Account>([
+        SELECT Id, Name, Type
+        FROM Account WHERE Type!=''
+        ORDER BY Name ASC LIMIT 5]);
+
     public static void examplesMaps(){
     System.debug('Map of accounts: '+mapAccounts);
     System.debug('Size of map:'+mapAccounts.size());
-    //Print keys
     System.debug('Keys of map: '+mapAccounts.keySet());
-    //values of map
     System.debug('Values of map: '+mapAccounts.values());
     }
 
-    public static void exampleGeneral(){
+    public static void exampleGeneral1(){
         Account accountToMap = new Account();
         accountToMap.Name = 'Account New';
         accountToMap.Type = 'Prospect';
@@ -25,22 +28,9 @@ public with sharing class CollectionsSOQLmap {
         System.debug('mapAccounts: '+mapAccounts);
     }
 
-    public static void anotherExample(){
-        Map<ID,Account> mapAccountsForm2 = new Map<ID,Account>([
-            SELECT Id,Name, Type
-            FROM Account
-            WHERE Type != ''
-            ORDER BY Name ASC
-            LIMIT 5
-        ]);
-        List<Account> listaExample = new List<Account>();
-        listaExample = [SELECT Id, Name, Type
-        FROM Account
-        WHERE Type != ''
-        ORDER BY Name ASC
-        LIMIT 5];
-        System.debug('Size of mapAccountsForm2: '+mapAccountsForm2.size());
-        mapAccountsForm2.put(listaExample.get(4).Id, listaExample.get(4));
-        System.debug('Size of mapAccountsForm2 after put: '+mapAccountsForm2.size());
+    public static void exampleGeneral2(){
+        System.debug('Size of mapAccounts: '+mapAccounts.size());
+        mapAccounts.put(listAccounts.get(4).Id, listAccounts.get(4));
+        System.debug('Size of mapAccounts after put: '+mapAccounts.size());
     }
 }

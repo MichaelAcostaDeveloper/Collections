@@ -16,7 +16,5 @@ lista = [SELECT Id, Name, Type
           LIMIT 5];
 setDeCuentasForm1.remove(lista.get(0));
 System.debug('setDeCuentas: '+setDeCuentasForm1.size());
-
 }
-
 }
